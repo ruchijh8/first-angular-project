@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { OutletContext } from '@angular/router';
+import {type User} from './user.model'
 
 
 @Component({
@@ -11,12 +11,7 @@ import { OutletContext } from '@angular/router';
 })
 export class UserComponent {
 
-  @Input() user!: {
-    avatar : string;
-    name: string;
-    id: string;
-  };
-
+  @Input({required: true}) user!: User;
   @Output() select = new EventEmitter<string>();
 
 
